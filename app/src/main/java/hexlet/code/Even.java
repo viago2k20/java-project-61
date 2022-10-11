@@ -13,12 +13,7 @@ public class Even {
             num = (int) (Math.random() * (100 + 1)); //from 0 to 100
             System.out.println("Question: " + num);
             answer = sc.next();
-            String trueAnswer;
-            if (num % 2 == 0) {
-                trueAnswer = "yes";
-            } else {
-                trueAnswer = "no";
-            }
+            String trueAnswer = (num % 2 == 0) ? "yes" : "no";
             if (answer.equals(trueAnswer)) {
                 System.out.println("Correct!");
                 if (i == 2) {
