@@ -6,14 +6,15 @@ public class Even {
 
     public static void playEven(String name) {
         String answer;
+        String trueAnswer;
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Scanner sc = new Scanner(System.in);
-        int num;
+        Scanner scanner = new Scanner(System.in);
+        int number;
         for (int i = 0; i < 3; i++) {
-            num = (int) (Math.random() * (100 + 1)); //from 0 to 100
-            System.out.println("Question: " + num);
-            answer = sc.next();
-            String trueAnswer = (num % 2 == 0) ? "yes" : "no";
+            number = (int) (Math.random() * (100 + 1));
+            System.out.println("Question: " + number);
+            answer = scanner.next();
+            trueAnswer = (number % 2 == 0) ? "yes" : "no";
             if (answer.equals(trueAnswer)) {
                 System.out.println("Correct!");
                 if (i == 2) {
