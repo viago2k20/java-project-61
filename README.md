@@ -4,3 +4,5 @@
 
 #game launch example
 https://asciinema.org/a/929bs297Kcue8fTY55JPP4LcG
+
+https://asciinema.org/a/PjUlZPjrYhjJu2pACPD7QSps6
