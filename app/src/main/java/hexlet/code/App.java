@@ -2,6 +2,8 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.EvenTmp;
+import hexlet.code.games.Gcd;
+
 import java.util.Scanner;
 
 public class App {
@@ -15,6 +17,7 @@ public class App {
             case "1" -> Cli.welcome();
             case "2" -> EvenTmp.playEven();
             case "3" -> Calc.playCalc();
+            case "4" -> Gcd.playGcd();
             case "0" -> {
                 System.out.println("Bye!");
                 System.out.print("\033[H\033[J"); //clear screen
@@ -29,6 +32,7 @@ public class App {
                 1. Greet\s
                 2. Even\s
                 3. Calc\s
+                4. GCD\s
                 0. Exit""");
     }
 }
