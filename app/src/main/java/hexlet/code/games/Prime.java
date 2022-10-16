@@ -24,12 +24,12 @@ public class Prime {
         if (number < 2) {
             return "no";
         }
-        int count = 0;
-        for (int i = 1; i <= number; i++) {
+        double count = Math.sqrt(number);
+        for (int i = 2; i <= count; i++) {
             if (number % i == 0) {
-                count++;
+                return "no";
             }
         }
-        return count == 2 ? "yes" : "no";
+        return "yes";
     }
 }
