@@ -5,7 +5,10 @@ import java.util.Scanner;
 public class Engine {
     public static void playGame(String question, String[] outPutExpression, String[] trueAnswer) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("May I have your name? ");
+        System.out.print("""
+
+                Welcome to the Brain Games!
+                May I have your name?\s""");
         String name = scanner.nextLine();
         System.out.println("Hello, " + name + "!");
         System.out.println(question);
