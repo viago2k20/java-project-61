@@ -11,7 +11,7 @@ public class Engine {
         System.out.println(question);
 
         for (int i = 0; i < 3; i++) {
-            System.out.println("Question from engine: " + outPutExpression[i]);
+            System.out.println("Question: " + outPutExpression[i]);
             String answer = scanner.next();
             if (answer.equals(trueAnswer[i])) {
                 System.out.println("Correct!");
