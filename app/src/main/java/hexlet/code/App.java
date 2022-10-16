@@ -31,7 +31,7 @@ public class App {
     }
 
     public static void printMenu() {
-        System.out.println("""
+        System.out.print("""
                 Please enter the game number and press Enter.
                 1. Greet\s
                 2. Even\s
@@ -39,6 +39,7 @@ public class App {
                 4. GCD\s
                 5. Progression\s
                 6. Prime\s
-                0. Exit""");
+                0. Exit\s
+                Your choice:\s""");
     }
 }
