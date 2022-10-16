@@ -21,6 +21,9 @@ public class Prime {
     }
 
     public static String definePrime(int number) {
+        if (number < 2) {
+            return "no";
+        }
         int count = 0;
         for (int i = 1; i <= number; i++) {
             if (number % i == 0) {
