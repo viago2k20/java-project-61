@@ -28,6 +28,7 @@ public class App {
             }
             default -> System.err.println("Wrong number!");
         }
+        sc.close();
     }
 
     public static void printMenu() {
