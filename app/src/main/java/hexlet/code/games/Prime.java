@@ -8,10 +8,10 @@ public class Prime {
     public static void playPrime() {
         String question = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        String[] trueAnswer = new String[3];
-        String[] outPutExpression = new String[3];
-        for (int i = 0; i < 3; i++) {
-            int number = GetRandom.getRandomNumber(1, 100);
+        String[] trueAnswer = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[] outPutExpression = new String[Engine.NUMBER_OF_QUESTIONS];
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
+            int number = GetRandom.getRandomNumber(1, Engine.MAX);
 
             outPutExpression[i] = "" + number;
             trueAnswer[i] = definePrime(number);

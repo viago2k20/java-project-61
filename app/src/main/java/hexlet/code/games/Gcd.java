@@ -8,11 +8,11 @@ public class Gcd {
     public static void playGcd() {
         String question = "Find the greatest common divisor of given numbers.";
 
-        String[] trueAnswer = new String[3];
-        String[] outPutExpression = new String[3];
-        for (int i = 0; i < 3; i++) {
-            int number = GetRandom.getRandomNumber(1, 100);
-            int number1 = GetRandom.getRandomNumber(1, 100);
+        String[] trueAnswer = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[] outPutExpression = new String[Engine.NUMBER_OF_QUESTIONS];
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
+            int number = GetRandom.getRandomNumber(1, Engine.MAX);
+            int number1 = GetRandom.getRandomNumber(1, Engine.MAX);
 
             outPutExpression[i] = "" + number + " " + number1;
             trueAnswer[i] = gcd(number, number1);
