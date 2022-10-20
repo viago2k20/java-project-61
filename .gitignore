@@ -9,3 +9,5 @@ bin
 .classpath
 
 *.cast
+
+.obsidian/

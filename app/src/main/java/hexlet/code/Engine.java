@@ -3,6 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    public static int numberOfQuestions = 3;
+    public static int max = 100;
     public static void playGame(String question, String[] outPutExpression, String[] trueAnswer) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("""

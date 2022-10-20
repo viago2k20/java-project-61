@@ -7,10 +7,10 @@ public class Calc {
     public static void playCalc() {
         String question = "What is the result of the expression?";
 
-        String[] trueAnswer = new String[3];
-        String[] outPutExpression = new String[3];
+        String[] trueAnswer = new String[Engine.numberOfQuestions];
+        String[] outPutExpression = new String[Engine.numberOfQuestions];
         String[] result;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.numberOfQuestions; i++) {
             result = defineData();
             outPutExpression[i] = result[0];
             trueAnswer[i] = result[1];
@@ -19,8 +19,8 @@ public class Calc {
     }
 
     public static String[] defineData() {
-        int number = GetRandom.getRandomNumber(0, 100);
-        int number1 = GetRandom.getRandomNumber(0, 100);
+        int number = GetRandom.getRandomNumber(0, Engine.max);
+        int number1 = GetRandom.getRandomNumber(0, Engine.max);
 
         String[] arr = new String[2];
         int j = GetRandom.getRandomNumber(0, 2);
