@@ -19,7 +19,7 @@ public class Engine {
             if (answer.equals(trueAnswer[i])) {
                 System.out.println("Correct!");
                 if (i == 2) {
-                    System.out.println("Congratulations, " + name);
+                    System.out.println("Congratulations, " + name + "!");
                 }
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + trueAnswer[i] + "'.\n"
