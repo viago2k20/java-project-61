@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+//    id 'java'
     id 'application'
     id 'com.adarshr.test-logger' version '3.1.0'
     id 'se.patrikerdes.use-latest-versions' version '0.2.18'
