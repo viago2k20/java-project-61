@@ -8,6 +8,9 @@ build
 bin
 .classpath
 
+build.gradle
+settings.gradle
+
 *.cast
 
 .obsidian/
