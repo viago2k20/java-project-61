@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.GetRandom;
+import hexlet.code.Utils;
 
 public class Progression {
     //точка старта прогрессии
@@ -17,23 +17,20 @@ public class Progression {
     public static void playProgression() {
         String question = "What number is missing in the progression?";
 
-        String[] trueAnswer = new String[Engine.NUMBER_OF_QUESTIONS];
-        String[] outPutExpression = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[][] outPutDate = new String[2][Engine.NUMBER_OF_QUESTIONS];
 
         String[][] temp = new String[Engine.NUMBER_OF_QUESTIONS][];
         int pos;
 
         for (int i = 0; i < temp.length; i++) {
-            temp[i] = getProgression(GetRandom.getRandomNumber(START, END));
-            pos = GetRandom.getRandomNumber(0, temp[i].length - 1);
-            trueAnswer[i] = temp[i][pos];
+            temp[i] = getProgression(Utils.getRandomNumber(START, END));
+            pos = Utils.getRandomNumber(0, temp[i].length - 1);
+            outPutDate[1][i] = temp[i][pos];
             temp[i][pos] = "..";
+            outPutDate[0][i] = String.valueOf(arrayToString(temp[i]));
         }
 
-        for (int i = 0; i < outPutExpression.length; i++) {
-            outPutExpression[i] = String.valueOf(arrayToString(temp[i]));
-        }
-        Engine.playGame(question, outPutExpression, trueAnswer);
+        Engine.playGame(question, outPutDate[0], outPutDate[1]);
     }
 
     public static StringBuilder arrayToString(String[] array) {
@@ -45,12 +42,12 @@ public class Progression {
     }
 
     public static String[] getProgression(int start) {
-        String[] arr = new String[GetRandom.getRandomNumber(MIN_LENGTH, MAX_LENGTH)];
-        int step = GetRandom.getRandomNumber(MIN_STEP, MAX_STEP);
+        String[] arr = new String[Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH)];
+        int step = Utils.getRandomNumber(MIN_STEP, MAX_STEP);
         int j = 0;
         int i = 0;
         while (j < arr.length) {
-            arr[j] = "" + (i + start);
+            arr[j] = String.valueOf(i + start);
             i = i + step;
             j++;
         }

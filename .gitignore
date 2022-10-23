@@ -1,10 +1,14 @@
+.idea/
+
 # Ignore Gradle project-specific cache directory
 .gradle/
 
 # Ignore Gradle build output directory
-build
+build/
 
-.idea/
+# Compiled class file
+*.class
+
 bin
 .classpath
 

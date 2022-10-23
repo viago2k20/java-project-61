@@ -1,35 +1,36 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.GetRandom;
+import hexlet.code.Utils;
 
 public class Prime {
 
     public static void playPrime() {
         String question = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        String[] trueAnswer = new String[Engine.NUMBER_OF_QUESTIONS];
-        String[] outPutExpression = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[][] outPutDate = new String[2][Engine.NUMBER_OF_QUESTIONS];
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            int number = GetRandom.getRandomNumber(1, Engine.MAX);
+            int number = Utils.getRandomNumber(1, Engine.MAX);
 
-            outPutExpression[i] = "" + number;
-            trueAnswer[i] = definePrime(number);
+            outPutDate[0][i] = String.valueOf(number);
+            outPutDate[1][i] = definePrime(number) ? "yes" : "no";
         }
-        Engine.playGame(question, outPutExpression, trueAnswer);
+        Engine.playGame(question, outPutDate[0], outPutDate[1]);
 
     }
 
-    public static String definePrime(int number) {
+    public static boolean definePrime(int number) {
+        boolean isPrime = true;
         if (number < 2) {
-            return "no";
+            return false;
         }
-        double count = Math.sqrt(number);
+        int count = (int) Math.sqrt(number);
         for (int i = 2; i <= count; i++) {
             if (number % i == 0) {
-                return "no";
+                isPrime = false;
+                break;
             }
         }
-        return "yes";
+        return isPrime;
     }
 }
