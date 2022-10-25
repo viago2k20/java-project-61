@@ -8,15 +8,15 @@ public class Gcd {
     public static void playGcd() {
         String question = "Find the greatest common divisor of given numbers.";
 
-        String[][] outPutDate = new String[2][Engine.NUMBER_OF_QUESTIONS];
+        String[][] outPutData = new String[2][Engine.NUMBER_OF_QUESTIONS];
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             int firstOperand = Utils.getRandomNumber(1, Engine.MAX);
             int secondOperand = Utils.getRandomNumber(1, Engine.MAX);
 
-            outPutDate[0][i] = firstOperand + " " + secondOperand;
-            outPutDate[1][i] = gcd(firstOperand, secondOperand);
+            outPutData[0][i] = firstOperand + " " + secondOperand;
+            outPutData[1][i] = gcd(firstOperand, secondOperand);
         }
-        Engine.playGame(question, outPutDate[0], outPutDate[1]);
+        Engine.playGame(question, outPutData);
     }
 
     //Большее число должно идти первым

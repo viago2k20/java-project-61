@@ -5,44 +5,36 @@ import hexlet.code.Utils;
 
 public class Progression {
     //точка старта прогрессии
-    static final int START = 1;
-    static final int END = 5;
+    private static final int START = 1;
+    private static final int END = 5;
     //длина прогрессии случайным образом от 5 до 15
-    static final int MIN_LENGTH = 5;
-    static final int MAX_LENGTH = 15;
+    private static final int MIN_LENGTH = 5;
+    private static final int MAX_LENGTH = 15;
     //шаг прогрессии от 1 до 5
-    static final int MIN_STEP = 1;
-    static final int MAX_STEP = 5;
+    private static final int MIN_STEP = 1;
+    private static final int MAX_STEP = 5;
 
     public static void playProgression() {
         String question = "What number is missing in the progression?";
 
-        String[][] outPutDate = new String[2][Engine.NUMBER_OF_QUESTIONS];
-
-        String[][] temp = new String[Engine.NUMBER_OF_QUESTIONS][];
+        String[][] outPutData = new String[2][Engine.NUMBER_OF_QUESTIONS];
         int pos;
 
-        for (int i = 0; i < temp.length; i++) {
-            temp[i] = getProgression(Utils.getRandomNumber(START, END));
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
+            String[][] temp = new String[Engine.NUMBER_OF_QUESTIONS][];
+            temp[i] = getProgression();
             pos = Utils.getRandomNumber(0, temp[i].length - 1);
-            outPutDate[1][i] = temp[i][pos];
+            outPutData[1][i] = temp[i][pos];
             temp[i][pos] = "..";
-            outPutDate[0][i] = String.valueOf(arrayToString(temp[i]));
+            outPutData[0][i] = String.join(" ", temp[i]);
         }
 
-        Engine.playGame(question, outPutDate[0], outPutDate[1]);
+        Engine.playGame(question, outPutData);
     }
 
-    public static StringBuilder arrayToString(String[] array) {
-        StringBuilder tmp = new StringBuilder();
-        for (String s : array) {
-            tmp.append(s).append(" ");
-        }
-        return tmp;
-    }
-
-    public static String[] getProgression(int start) {
+    public static String[] getProgression() {
         String[] arr = new String[Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH)];
+        int start = Utils.getRandomNumber(START, END);
         int step = Utils.getRandomNumber(MIN_STEP, MAX_STEP);
         int j = 0;
         int i = 0;
