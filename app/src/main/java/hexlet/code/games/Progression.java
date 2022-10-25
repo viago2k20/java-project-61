@@ -19,14 +19,12 @@ public class Progression {
 
         String[][] outPutData = new String[2][Engine.NUMBER_OF_QUESTIONS];
         int pos;
-
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            String[][] temp = new String[Engine.NUMBER_OF_QUESTIONS][];
-            temp[i] = getProgression();
-            pos = Utils.getRandomNumber(0, temp[i].length - 1);
-            outPutData[1][i] = temp[i][pos];
-            temp[i][pos] = "..";
-            outPutData[0][i] = String.join(" ", temp[i]);
+            String[] temp = getProgression();
+            pos = Utils.getRandomNumber(0, temp.length - 1);
+            outPutData[1][i] = temp[pos];
+            temp[pos] = "..";
+            outPutData[0][i] = String.join(" ", temp);
         }
 
         Engine.playGame(question, outPutData);
