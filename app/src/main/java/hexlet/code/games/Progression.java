@@ -19,8 +19,11 @@ public class Progression {
 
         String[][] outPutData = new String[2][Engine.NUMBER_OF_QUESTIONS];
         int pos;
+        int start = Utils.getRandomNumber(START, END);
+        int step = Utils.getRandomNumber(MIN_STEP, MAX_STEP);
+        int lengthProgression = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            String[] temp = getProgression();
+            String[] temp = getProgression(start, step, lengthProgression);
             pos = Utils.getRandomNumber(0, temp.length - 1);
             outPutData[1][i] = temp[pos];
             temp[pos] = "..";
@@ -30,10 +33,8 @@ public class Progression {
         Engine.playGame(question, outPutData);
     }
 
-    public static String[] getProgression() {
-        String[] arr = new String[Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH)];
-        int start = Utils.getRandomNumber(START, END);
-        int step = Utils.getRandomNumber(MIN_STEP, MAX_STEP);
+    public static String[] getProgression(int start, int step, int lengthProgression) {
+        String[] arr = new String[lengthProgression];
         int j = 0;
         int i = 0;
         while (j < arr.length) {
