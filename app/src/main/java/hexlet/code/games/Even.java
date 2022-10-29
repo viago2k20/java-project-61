@@ -7,11 +7,11 @@ public class Even {
     public static void playEven() {
         String question = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        String[][] outPutData = new String[2][Engine.NUMBER_OF_QUESTIONS];
+        String[][] outPutData = new String[Engine.NUMBER_OF_QUESTIONS][2];
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             int number = Utils.getRandomNumber(0, Engine.MAX);
-            outPutData[0][i] = String.valueOf(number);
-            outPutData[1][i] = isEven(number) ? "yes" : "no";
+            outPutData[i][0] = String.valueOf(number);
+            outPutData[i][1] = isEven(number) ? "yes" : "no";
         }
         Engine.playGame(question, outPutData);
     }

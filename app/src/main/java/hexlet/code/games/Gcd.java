@@ -8,13 +8,13 @@ public class Gcd {
     public static void playGcd() {
         String question = "Find the greatest common divisor of given numbers.";
 
-        String[][] outPutData = new String[2][Engine.NUMBER_OF_QUESTIONS];
+        String[][] outPutData = new String[Engine.NUMBER_OF_QUESTIONS][2];
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             int firstOperand = Utils.getRandomNumber(1, Engine.MAX);
             int secondOperand = Utils.getRandomNumber(1, Engine.MAX);
 
-            outPutData[0][i] = firstOperand + " " + secondOperand;
-            outPutData[1][i] = gcd(firstOperand, secondOperand);
+            outPutData[i][0] = firstOperand + " " + secondOperand;
+            outPutData[i][1] = gcd(firstOperand, secondOperand);
         }
         Engine.playGame(question, outPutData);
     }

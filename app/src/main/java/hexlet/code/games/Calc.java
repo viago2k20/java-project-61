@@ -7,12 +7,12 @@ public class Calc {
     public static void playCalc() {
         String question = "What is the result of the expression?";
 
-        String[][] outPutData = new String[2][Engine.NUMBER_OF_QUESTIONS];
+        String[][] outPutData = new String[Engine.NUMBER_OF_QUESTIONS][2];
         String[] result;
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             result = defineData();
-            outPutData[0][i] = result[0];
-            outPutData[1][i] = result[1];
+            outPutData[i][0] = result[0];
+            outPutData[i][1] = result[1];
         }
         Engine.playGame(question, outPutData);
     }

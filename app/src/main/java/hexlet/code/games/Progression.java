@@ -17,17 +17,22 @@ public class Progression {
     public static void playProgression() {
         String question = "What number is missing in the progression?";
 
-        String[][] outPutData = new String[2][Engine.NUMBER_OF_QUESTIONS];
+        String[][] outPutData = new String[Engine.NUMBER_OF_QUESTIONS][2];
         int pos;
-        int start = Utils.getRandomNumber(START, END);
-        int step = Utils.getRandomNumber(MIN_STEP, MAX_STEP);
-        int lengthProgression = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
+        int start;
+        int step;
+        int lengthProgression;
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
+            start = Utils.getRandomNumber(START, END);
+            step = Utils.getRandomNumber(MIN_STEP, MAX_STEP);
+            lengthProgression = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
+
             String[] temp = getProgression(start, step, lengthProgression);
+
             pos = Utils.getRandomNumber(0, temp.length - 1);
-            outPutData[1][i] = temp[pos];
+            outPutData[i][1] = temp[pos];
             temp[pos] = "..";
-            outPutData[0][i] = String.join(" ", temp);
+            outPutData[i][0] = String.join(" ", temp);
         }
 
         Engine.playGame(question, outPutData);
